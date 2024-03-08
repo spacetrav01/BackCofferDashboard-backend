@@ -3,15 +3,14 @@ const cors = require("cors");
 const router = require("./Router/Router");
 const { default: mongoose } = require("mongoose");
 const app = express();
-const dotenv = require("dotenv").config();
-
+const dotenv = require("dotenv");
+dotenv.config();
 app.use(express.json());
 app.use(cors());
 app.use(router);
-app.use(dotenv);
 //connecting to mongodb
 const url = `"${process.env.REACT_APP_MONGODB_CONNECTION_URL}"`;
-mongoose.connect().then(()=>{
+mongoose.connect(url).then(()=>{
   console.log("We are successfully connected to MongoDb")
 })
 app.listen(5000, "localhost", () => {

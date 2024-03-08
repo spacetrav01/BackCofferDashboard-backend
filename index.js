@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(cors());
 app.use(router);
 //connecting to mongodb
-const url = "mongodb+srv://ompshahane:Jtp9tWGV2kSvGh2H@blackcoffer.zkagjqc.mongodb.net/?retryWrites=true&w=majority&appName=blackCoffer";
+const url = process.env.REACT_APP_MONGODB_CONNECTION_URL;
 mongoose.connect(url).then(()=>{
   console.log("We are successfully connected to MongoDb")
 })

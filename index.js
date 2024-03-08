@@ -3,8 +3,8 @@ const cors = require("cors");
 const router = require("./Router/Router");
 const { default: mongoose } = require("mongoose");
 const app = express();
-const dotenv = require("dotenv");
-app.use(dotenv.config());
+const env = require("dotenv").config();
+
 app.use(express.json());
 app.use(cors());
 app.use(router);

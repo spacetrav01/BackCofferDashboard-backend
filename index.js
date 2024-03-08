@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(cors());
 app.use(router);
 //connecting to mongodb
-mongoose.connect(process.env.MONGODB_CONNECTION_URL).then(()=>{
+mongoose.connect(process.env.REACT_APP_MONGODB_CONNECTION_URL).then(()=>{
   console.log("We are successfully connected to MongoDb")
 })
 app.listen(5000, "localhost", () => {

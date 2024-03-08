@@ -13,6 +13,6 @@ const url = process.env.REACT_APP_MONGODB_CONNECTION_URL;
 mongoose.connect(url).then(()=>{
   console.log("We are successfully connected to MongoDb")
 })
-app.listen(3000,"0.0.0.0", () => {
+app.listen(3000, () => {
   console.log("running");
 });
